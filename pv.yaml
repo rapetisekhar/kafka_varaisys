@@ -13,7 +13,58 @@ spec:
     path: "/mnt/data/kafka-0"
   claimRef:
     name: kafka-data-kafka-0
-    namespace: default 
+    namespace: default
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-kafka-1
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  hostPath:
+    path: "/mnt/data/kafka-1"
+  claimRef:
+    name: kafka-data-kafka-1
+    namespace: default
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-kafka-2
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  hostPath:
+    path: "/mnt/data/kafka-2"
+  claimRef:
+    name: kafka-data-kafka-2
+    namespace: default
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-kafka-3
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  hostPath:
+    path: "/mnt/data/kafka-3"
+  claimRef:
+    name: kafka-data-kafka-3
+    namespace: default
 ---
 apiVersion: v1
 kind: PersistentVolume
